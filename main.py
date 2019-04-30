@@ -3,7 +3,8 @@ import os # Отсюда нам понадобится методы для от�
 
 from PyQt5 import QtWidgets
 
-import design # Это наш конвертированный файл дизайна
+# import design # Это наш конвертированный файл дизайна
+from libs.uix import design
 
 
 class ExampleApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
@@ -42,7 +43,6 @@ class ExampleApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
 		# равной пути к выбранной дирректории
 
 		if directory: # Не продолжать выполнение, если пользователь не выбрал директорию
-			print(os.listdir(directory))
 			for file_name in sorted(os.listdir(directory)): # для каждого файла директории 
 				if file_name[0] == '.':
 					continue
